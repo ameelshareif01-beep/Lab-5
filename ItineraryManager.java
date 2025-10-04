@@ -1,7 +1,7 @@
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 
-public class IniteraryManager {
+public class ItineraryManager {
 
     // ---------- Position Interface ----------
     public interface Position<E> {
@@ -179,20 +179,20 @@ public class IniteraryManager {
         LinkedPositionalList<String> itinerary = new LinkedPositionalList<>();
 
         // Add initial stops
-        Position<String> p1 = itinerary.addLast("New York");
-        Position<String> p2 = itinerary.addLast("Paris");
-        Position<String> p3 = itinerary.addLast("Tokyo");
+        var p1 = itinerary.addLast("New York");
+        var p2 = itinerary.addLast("Paris");
+        var p3 = itinerary.addLast("Tokyo");
 
-        // Insert a new stop AFTER Paris
+        // Insert new stops
         itinerary.addAfter(p2, "Eiffel Tower Museum");
-
-        // Insert a new stop BEFORE Tokyo
         itinerary.addBefore(p3, "Hawaii");
 
-        // Print itinerary
-        System.out.println("Your Travel Itinerary:");
+        // Display itinerary
+        System.out.println("✈️  Your Travel Itinerary:");
         for (String stop : itinerary) {
-            System.out.println("- " + stop);
+            System.out.println(" - " + stop);
         }
+
+        System.out.println("\nTotal Stops: " + itinerary.size());
     }
 }
